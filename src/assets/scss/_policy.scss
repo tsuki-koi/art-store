@@ -1,0 +1,29 @@
+.policy {
+  @include padding();
+  padding-bottom: 30px;
+  background-color: $primary-bg;
+  h1 {
+    text-align: center;
+    font-family: $font-i;
+  }
+
+  h2 {
+    width: 100%;
+    margin: 40px 0 20px;
+    padding: 10px 20px;
+    font-size: 26px;
+    color: $secondary-color;
+    background-color: #fff;
+    border-radius: 20px 0;
+  }
+
+  .help {
+    @include center();
+    flex-direction: column;
+    h2 {
+      width: 40vw;
+      color: $text-color;
+      background: none;
+    }
+  }
+}

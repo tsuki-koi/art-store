@@ -1,0 +1,105 @@
+footer {
+  // background-color: $primary-color;
+  background-image: url('../images/about-us-banner.jpg');
+  background-size: cover;
+  color: white;
+  a {
+    color: white;
+    text-decoration: none;
+  }
+  .newsletter {
+    @include center();
+    padding: 0 10vw;
+    flex-direction: column;
+    padding: 50px;
+    background-color: $primary-color;
+    box-shadow: 0 10px 30px rgba($color: #000000, $alpha: 0.2);
+    svg {
+      margin: 20px;
+    }
+    .input-box {
+      @include center();
+      gap: 30px;
+      width: 100%;
+      border: 1px solid rgba(255, 255, 255, 0.5);
+      border-radius: 10px;
+      padding: 50px;
+      .text {
+        text-align: center;
+        h1 {
+          font-family: $font-i;
+        }
+        p {
+          margin: 0;
+          font-size: 20px;
+        }
+      }
+      form {
+        font-size: 18px;
+        input {
+          padding: 0 15px;
+          border-radius: 30px;
+          border: none;
+          outline: none;
+        }
+        button {
+          font-weight: 600;
+          padding: 10px 15px;
+          border-radius: 30px;
+          border: 2px dashed $primary-color;
+          color: $text-color;
+          transition: all 0.3s ease;
+        }
+        button:hover {
+          border: 2px dashed white;
+          color: white;
+          background: none;
+        }
+      }
+    }
+  }
+
+  .links {
+    @include padding();
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+    color: white !important;
+    .col-12 {
+      padding: 20px;
+    }
+    .socials {
+      svg {
+        font-size: 20px;
+        margin-right: 10px;
+        transition: all 0.3s ease;
+        cursor: pointer;
+      }
+      svg:hover {
+        transform: translateY(-5px);
+      }
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+      margin-top: 10px;
+      li {
+        margin-bottom: 5px;
+        transition: all 0.3s ease;
+        // border: 1px solid red;
+      }
+      li:hover {
+        transform: translateX(10px);
+      }
+    }
+    .help div {
+      align-items: center;
+      margin: 15px 0;
+      svg {
+        // margin-right: 5px;
+        font-size: 20px;
+      }
+      p {
+        margin: 0;
+      }
+    }
+  }
+}

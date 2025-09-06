@@ -1,0 +1,50 @@
+.account-details {
+  padding: 15px;
+  .input-con {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-bottom: 20px;
+    position: relative;
+    width: 70%;
+    input {
+      height: 40px;
+      border-radius: 40px;
+      border: 1px solid $my-gray;
+      padding: 15px;
+    }
+    button {
+      position: absolute;
+      right: 0;
+      top: 0;
+      height: 40px;
+      width: 40px;
+      border-radius: 50%;
+      background: none;
+      border: 2px dashed black;
+      transition: all 0.3s ease;
+    }
+    button:hover {
+      border: 2px dashed $primary-color;
+      color: $primary-color;
+    }
+  }
+  .info {
+    border-bottom: 1px solid $my-gray;
+    padding-bottom: 30px;
+    .name {
+      @include between();
+      gap: 50px;
+      .input-con {
+        width: 50%;
+      }
+    }
+  }
+  .password-change {
+    padding-top: 30px;
+    h3 {
+      margin-bottom: 20px;
+      font-weight: 600;
+    }
+  }
+}

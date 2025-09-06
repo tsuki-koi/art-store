@@ -1,0 +1,158 @@
+.product-details {
+  width: 100%;
+  padding: 10px 10vw;
+  background-color: #f1f1f1;
+  color: $text-color;
+  .main-con {
+    @include center();
+    gap: 30px;
+    margin-bottom: 30px;
+    .images {
+      width: 50%;
+      background-color: #fff;
+      padding: 0 0 50px;
+      border-radius: 0 80px 80px 0;
+      box-shadow: 0 0 20px rgba($color: #00000073, $alpha: 0.1);
+      overflow: hidden;
+      img {
+        height: 400px;
+        width: calc(100% - 50px);
+        object-fit: cover;
+        border-radius: 50px 0 0 50px;
+        margin: 50px 0 0 50px;
+        transition: all 0.3s ease;
+      }
+      img:nth-child(odd) {
+        margin: 50px 50px 0 0;
+        border-radius: 0 50px 50px 0;
+        float: right;
+      }
+      img:hover {
+        box-shadow: 0 0 20px rgba($color: #000000, $alpha: 0.1);
+        transform: scale(1.1);
+        border-radius: 60px 0 0 40%;
+      }
+      img:nth-child(odd):hover {
+        border-radius: 0 60px 40% 0;
+      }
+    }
+
+    .info {
+      position: sticky;
+      top: 200px;
+      background-color: #fff;
+      width: 50%;
+      padding: 30px 50px;
+      box-shadow: 0 0 20px rgba($color: #000000, $alpha: 0.1);
+      border-radius: 50px 0;
+
+      .top {
+        border-bottom: 1px solid $my-gray;
+        * {
+          margin: 0;
+        }
+        h1 {
+          font-family: $font-i;
+          font-size: 40px;
+        }
+        .rating {
+          display: flex;
+          gap: 5px;
+          .stars {
+            color: rgb(242, 209, 25);
+          }
+          .number {
+            margin-top: 3px;
+          }
+        }
+        .price {
+          font-size: 30px;
+          font-weight: 600;
+          color: $secondary-color;
+          padding: 10px 0;
+          span {
+            font-size: 26px;
+            font-weight: 600;
+            text-decoration: line-through;
+            color: rgba($color: $secondary-color, $alpha: 0.8);
+          }
+        }
+      }
+
+      .center {
+        border-bottom: 1px solid $my-gray;
+        .desc {
+          margin: 10px 0 20px;
+        }
+
+        .add-to-cart-con {
+          div {
+            display: flex;
+            .counter {
+              @include center();
+              gap: 0;
+              border: 1px solid $my-gray;
+              border-radius: 30px;
+              overflow: hidden;
+              button, span {
+                font-size: 20px;
+                width: 40px;
+                height: 50px;
+                @include center();
+              }
+              button {
+                background-color: #fff;
+                transition: all 0.3s ease;
+              }
+              button:hover {
+                background-color: rgba($primary-color, $alpha: 1);
+                color: white;
+              }
+            }
+          }
+        }
+        .btns {
+          display: flex;
+          gap: 30px;
+          margin: 20px 0 10px;
+          .wishlist {
+            background: none;
+            color: $text-color;
+            transition: all 0.3s ease;
+            svg {
+              color: $primary-color;
+              margin-right: 7px;
+              font-size: 20px;
+            }
+          }
+          .wishlist:hover {
+            color: $primary-color;
+          }
+          .share {
+            color: #999;
+            svg {
+              color: $text-color;
+              font-size: 20px;
+              margin-left: 7px;
+              transition: all 0.3s ease;
+            }
+            svg:hover {
+              color: $secondary-color;
+              transform: scale(1.2);
+            }
+          }
+        }
+      }
+
+      .bottom {
+        margin: 10px 0;
+        .add-info {
+          color: #999;
+          span {
+            color: $text-color;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,267 @@
+.home.dark {
+  filter: invert(100%);
+  #banner1,
+  #banner2,
+  #banner3 {
+    filter: invert(100%);
+  }
+
+}
+
+.home {
+  @include padding();
+  background-image: url("../images/home-bg.jpg");
+  background-size: cover; 
+
+  h1,
+  h3 {
+    font-family: $font-i;
+  }
+
+  #banner1 {
+    background-image: url("../images/banner1.jpg");
+    h1 {
+      font-size: 60px;
+    }
+  }
+  #banner2 {
+    background-image: url("../images/banner2.jpg");
+
+    h3 {
+      font-size: 40px;
+    }
+  }
+  #banner3 {
+    background-image: url("../images/banner3.jpg");
+
+    h3 {
+      font-size: 40px;
+    }
+  }
+
+  #banner1,
+  #banner2,
+  #banner3 {
+    height: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 10px;
+  }
+}
+
+.features {
+  @include padding();
+  @include between();
+  justify-content: space-around;
+  padding-bottom: 20px;
+  color: $text-color;
+  flex-wrap: wrap;
+  .feature {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    // border: 1px solid red;
+    p {
+      margin: 0;
+      font-weight: 700;
+    }
+    svg {
+      width: 50px;
+      font-size: 30px;
+      border-right: 1px solid $my-gray;
+      padding-right: 15px;
+    }
+  }
+}
+
+.features.light {
+  background-color: white;
+  color: #444;
+}
+.features.dark {
+  background-color: #444;
+  color: #ebe4e4;
+}
+
+.categories-carousel {
+  @include padding();
+  color: $text-color;
+  background-color: #4a9d7c;
+  h1 {
+    font-family: $font-i;
+    font-size: 50px;
+  }
+  p {
+    font-size: 22px;
+  }
+  .image {
+    overflow: hidden;
+    height: 200px;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    border: 3px solid white;
+    img {
+      transition: all 0.3s ease;
+      height: 100%;
+    }
+  }
+  .card {
+    width: 200px;
+    margin: 0 auto;
+    border: none;
+    background: none;
+    color: #fff;
+    cursor: pointer;
+    .card-title {
+      transition: all 0.3s ease;
+    }
+  }
+  .card:hover {
+    .image {
+      border-radius: 10%;
+    }
+    img,
+    .card-title {
+      transform: scale(1.2);
+    }
+  }
+}
+
+.deals.light {
+  background-color: $primary-bg;
+}
+
+.deals.dark {
+  background-color: $bg-dark;
+  color: #ebe4e4;
+  button {
+    color: #ebe4e4;
+  }
+}
+
+.deals {
+  @include padding();
+  position: relative;
+  z-index: 0;
+  .top {
+    @include between();
+    .text {
+      @extend .top;
+      gap: 20px;
+      h1 {
+        font-family: $font-i;
+        font-size: 50px;
+      }
+      .timer {
+        background-color: #fff;
+        color: $text-color;
+        padding: 10px 20px;
+        border-radius: 30px;
+        font-size: 20px;
+        margin-left: 20px;
+        span {
+          font-size: 24px;
+          font-weight: 600;
+          margin-right: 3px;
+          color: $primary-color;
+        }
+      }
+    }
+    button {
+      background: none;
+      border-bottom: 3px solid $primary-color;
+      font-size: 22px;
+      transition: all 0.3s ease;
+    }
+    button:hover {
+      border-bottom: 2px solid transparent;
+      transform: translateX(10px);
+      color: $primary-color;
+      text-decoration: wavy;
+    }
+  }
+  .react-multiple-carousel__arrow--right {
+    position: absolute;
+    right: 0;
+    background-color: rgba($color: $primary-color, $alpha: 0.5);
+  }
+  .react-multiple-carousel__arrow--left {
+    position: absolute;
+    left: 0;
+    background-color: rgba($color: $primary-color, $alpha: 0.5);
+  }
+  .react-multiple-carousel__arrow--right:hover,
+  .react-multiple-carousel__arrow--left:hover {
+    background-color: rgba($color: $primary-color, $alpha: 0.8);
+  }
+
+  .card {
+    transform: scale(0.9);
+    transition: 0.3s all ease;
+    height: 100%;
+  }
+  .card:hover {
+    transform: scale(1);
+    box-shadow: 0 0 10px rgba($color: #000000, $alpha: 0.1);
+  }
+}
+
+.from-blog {
+  @include padding();
+  color: $text-color;
+  h1 {
+    color: $primary-color;
+    font-family: $font-i;
+    font-size: 40px;
+  }
+  .cards {
+    @include between();
+    .card,
+    .image,
+    img {
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+    .card:hover {
+      img {
+        transform: scale(1.1);
+      }
+      box-shadow: 0 0 10px rgba($color: #000000, $alpha: 0.1);
+    }
+  }
+  button {
+    background: none;
+    border: 2px dashed $primary-color;
+    color: $primary-color;
+    font-weight: 600;
+    padding: 7px 10px;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+  }
+  button:hover {
+    border: 2px dashed white;
+    background-color: $primary-color;
+    color: white;
+  }
+}
+
+.brands {
+  h1 {
+    font-family: $font-i;
+    color: $secondary-color;
+  }
+  .logos {
+    @include between();
+    padding: 0 100px;
+    img {
+      height: 90px;
+      opacity: 0.5;
+      transition: all 0.3s ease;
+    }
+    img:hover {
+      opacity: 1;
+    }
+  }
+}

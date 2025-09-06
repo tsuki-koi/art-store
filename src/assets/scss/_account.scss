@@ -1,0 +1,51 @@
+.account {
+  padding: 10px 10vw 30px;
+  background-color: #f1f1f1;
+  h1 {
+    font-family: $font-i;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
+  .main-con {
+    @include between();
+    align-items: start;
+    gap: 50px;
+    .side-con {
+      top: 200px;
+      button {
+        width: 100%;
+      }
+      .tabs {
+        background-color: #ffffff;
+        @include center();
+        align-items: start;
+        flex-direction: column;
+        padding-bottom: 20px;
+        margin-bottom: 20px;
+        .nav-item {
+          width: 100%;
+        }
+        .nav-link {
+          font-size: 20px;
+          margin: 20px 20px 0;
+          color: $text-color;
+          border-radius: 0 20px;
+          background-color: #f1f1f1;
+        }
+        .nav-link.active {
+          background-color: $primary-color;
+          color: white;
+        }
+      }
+    }
+    .view-tab {
+      background-color: white;
+      border-radius: 20px 0;
+      padding: 20px;
+      .nav {
+        border: none;
+      }
+    }
+  }
+}

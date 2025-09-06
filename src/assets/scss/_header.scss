@@ -1,0 +1,335 @@
+header {
+  position: sticky;
+  top: -40px;
+  z-index: 100;
+  box-shadow: 0 0 20px rgba($color: #000000, $alpha: 0.1);
+}
+
+header.light {
+  background-color: #fff;
+  color: #444;
+  select {
+    color: #444;
+  }
+  a {
+    color: #444;
+  }
+}
+
+header.dark {
+  background-color: $bg-dark;
+  color: #ebe4e4;
+  select {
+    color: #ebe4e4;
+  }
+  input {
+    background-color: $bg-dark;
+    color: #ebe4e4;
+  }
+  .bottom .browse button, .link, a {
+    color: #ebe4e4;
+  }
+}
+
+.promo {
+  @include between();
+  font-size: 14px;
+  font-weight: 500;
+  padding: 5px 10vw;
+  height: 40px;
+
+  .delivery-info {
+    margin-right: 20px;
+  }
+
+  .icon {
+    color: $secondary-color;
+    margin-right: 10px;
+    font-size: 20px;
+  }
+
+  .tools {
+    select {
+      border: none;
+      font-size: 14px;
+      font-weight: 500;
+      outline-style: none;
+      background: none;
+      option {
+        color: #444;
+      }
+    }
+    button {
+      background: none;
+    }
+    .sun {
+      color: $primary-color;
+    }
+    .icon {
+      cursor: pointer;
+    }
+  }
+}
+
+nav {
+  .top {
+    padding: 10px 10vw;
+    @include between();
+    height: 100px;
+    background-color: $primary-color;
+
+    .search-con {
+      position: relative;
+      width: 50%;
+      height: 60%;
+      border-radius: 50px;
+      overflow: hidden;
+
+      button {
+        height: 100%;
+        width: 40%;
+        font-weight: 500;
+        .icon {
+          margin-left: 10px;
+          font-size: 20px;
+        }
+      }
+      input {
+        width: 100%;
+        height: 100%;
+        border: none;
+        padding: 20px;
+        outline: none;
+      }
+      .icon:not(button .icon) {
+        position: absolute;
+        font-size: 24px;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 20px;
+        cursor: pointer;
+      }
+    }
+
+    .profile {
+      display: flex;
+      flex-wrap: wrap;
+      .link, a {
+        @include center();
+        flex-direction: column;
+        text-decoration: none;
+        color: white;
+        width: 70px;
+        position: relative;
+        cursor: pointer;
+        .icon {
+          font-size: 26px;
+          transition: all 0.7s ease;
+        }
+        span {
+          font-size: 16px;
+          font-weight: 500;
+          line-height: 16px;
+          text-align: center;
+          transition: all 0.3s ease;
+        }
+        .badge {
+          position: absolute;
+          top: 0;
+          right: 0;
+          background-color: white;
+          border: 3px solid $primary-color;
+          color: $text-color;
+          font-size: 16px;
+          width: 25px;
+          height: 25px;
+          @include center();
+          border-radius: 50%;
+        }
+        .tooltip {
+          position: absolute;
+          left: 50%;
+          top: 110%;
+          width: 200px;
+          transform: translateX(-50%);
+          background-color: #333333c0;
+          color: #fff;
+          padding: 5px 10px;
+          border-radius: 5px;
+          font-size: 14px;
+          white-space: wrap;
+          opacity: 0;
+          visibility: hidden;
+          transition: all 0.3s ease;
+        }
+      }
+
+      .link:hover .tooltip {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      a:hover, .link:hover {
+        .icon {
+          transform: scale(1.2);
+        }
+      }
+    }
+  }
+
+  .bottom {
+    @include between();
+    padding: 0 10vw;
+    height: 50px;
+    .browse {
+      height: 100%;
+      position: relative;
+      button {
+        @include center();
+        font-size: 18px;
+        font-weight: 500;
+        height: 100%;
+        padding: 0;
+        background-color: transparent;
+        transition: all 0.3s ease;
+        .icon {
+          margin-right: 10px;
+          font-size: 24px;
+        }
+      }
+      button:hover {
+        padding: 20px;
+        background-color: $secondary-color;
+        color: white;
+        border-radius: 0 20px 0 20px;
+      }
+      .dropdown {
+        position: absolute;
+        top: 60px;
+        width: 220px;
+        background-color: #fff;
+        box-shadow: 0 0 10px rgba($color: #000000, $alpha: 0.2);
+        border-radius: 0 20px 0 20px;
+        height: auto;
+        list-style: none;
+        padding: 0;
+        transform: scaleY(0);
+        transform-origin: top;
+        transition: all 0.3s ease;
+        li {
+          @include between();
+          padding: 10px 15px;
+          border-radius: 0 20px 0 20px;
+
+          a {
+            @include center();
+            gap: 5px;
+            text-decoration: none;
+            line-height: 20px;
+            color: $text-color;
+            cursor: pointer;
+            transition: all 0.3s ease;
+          }
+          svg {
+            font-size: 24px;
+            margin-right: 5px;
+          }
+        }
+        li:not(:last-child) {
+          border-bottom: 1px solid $my-gray;
+        }
+        li:hover {
+          a {
+            color: $primary-color;
+          }
+        }
+
+        .sub-dd-btn {
+          position: relative;
+          .sub-dd {
+            position: absolute;
+            top: 10px;
+            left: 210px;
+            width: 200px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba($color: #000000, $alpha: 0.1);
+            border-radius: 0 20px 0 20px;
+            padding: 0;
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: all 0.3s ease;
+            z-index: 50;
+            opacity: 0;
+
+            li {
+              cursor: pointer;
+              transition: all 0.3s ease;
+            }
+            li:hover {
+              color: $secondary-color;
+            }
+          }
+        }
+        .sub-dd-btn:hover {
+          .sub-dd {
+            transform: scaleX(1);
+            opacity: 1;
+          }
+        }
+      }
+    }
+    .browse:hover {
+      .dropdown {
+        transform: scaleY(1);
+      }
+    }
+
+    .navbar {
+      height: 100%;
+      padding: 0;
+      ul {
+        @include center();
+        gap: 20px;
+        height: 100%;
+        list-style: none;
+        padding: 0;
+        li {
+          height: 100%;
+          a {
+            @include center();
+            height: 100%;
+            font-size: 18px;
+            font-weight: 500;
+            text-decoration: none;
+
+            transition: all 0.3s ease;
+          }
+          a.active {
+            color: $secondary-color;
+            border-bottom: 3px solid $secondary-color;
+          }
+          a:hover {
+            color: $secondary-color;
+          }
+        }
+      }
+    }
+
+    .sale {
+      .icon {
+        color: rgb(242, 86, 47);
+        margin-right: 5px;
+        padding-bottom: 3px;
+        font-size: 20px;
+      }
+      b {
+        color: $secondary-color;
+      }
+    }
+
+    .menu-btn {
+      background: none;
+      font-size: 22px;
+    }
+  }
+}

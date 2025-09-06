@@ -1,0 +1,153 @@
+.dashboard {
+  section {
+    width: 100%;
+    margin-bottom: 20px;
+    border: 1px solid $my-gray;
+    border-radius: 20px 0;
+    overflow: hidden;
+  }
+
+  section {
+    h2 {
+      // border-bottom: 1px solid $my-gray;
+      font-size: 24px;
+      padding: 10px;
+      margin: 0;
+      background-color: $secondary-color;
+      color: white;
+      border-bottom-right-radius: 20px;
+      text-align: center;
+      svg {
+        margin-right: 10px;
+      }
+    }
+
+    ul {
+      list-style: none;
+      // border: 1px solid red;
+      padding: 15px;
+      margin: 0;
+
+      li {
+        @include between();
+        color: #555;
+        padding: 5px 0;
+        span {
+          font-weight: 600;
+        }
+      }
+      li:not(:last-child) {
+        border-bottom: 1px solid $my-gray;
+      }
+    }
+  }
+
+  .sales {
+    table {
+      width: 100%;
+      th,
+      td {
+        text-align: center;
+        height: 30px;
+        padding: 10px;
+        font-size: 20px;
+        font-weight: 500;
+      }
+      th {
+        background-color: $secondary-color;
+        color: white;
+        border-radius: 0 0 20px 20px;
+      }
+    }
+  }
+
+  .promo {
+    border: 1px solid red;
+  }
+}
+
+.product-form {
+  h3 {
+    border-top: 1px solid $my-gray;
+    border-bottom: 1px solid $my-gray;
+    padding: 10px;
+  }
+  h2, h3 {
+    margin-bottom: 30px;
+  }
+  .input-con {
+    position: relative;
+    margin-bottom: 30px;
+    label {
+      position: absolute;
+      top: -11px;
+      left: 20px;
+      background-color: #fff;
+      color: rgb(134, 134, 134);
+      padding: 0 5px;
+      transition: all 0.3s ease;
+    }
+    input, textarea {
+      border-radius: 25px;
+      min-height: 50px;
+      padding: 10px 25px;
+    }
+  }
+  .input-con:hover {
+    label {
+      color: $secondary-color;
+    }
+  }
+  .inputs-con {
+    @include between();
+    gap: 20px;
+    .input-con {
+      width: 100%;
+    }
+  }
+
+  select {
+    width: 100%;
+    border-radius: 25px;
+    min-height: 50px;
+    padding: 10px 20px;
+    border: 1px solid $my-gray;
+    margin-bottom: 30px;
+  }
+  select:focus {
+    border: 1px solid $primary-color;
+  }
+}
+
+.form-control:focus {
+  border: 1px solid $primary-color;
+}
+
+.product-tab {
+  padding: 10px;
+  .products-list {
+    padding: 0;
+    p {
+      color: gray;
+    }
+    li {
+      @include between();
+      margin: 10px;
+      border: 1px solid $my-gray;
+      border-radius: 20px 0;
+      overflow: hidden;
+      img {
+        width: 100px;
+        height: 70px;
+        object-fit: cover;
+      }
+      button {
+        border-radius: 20px 0;
+        margin: 10px;
+      }
+    }
+    li:nth-child(odd) {
+      background-color: $primary-bg;
+    }
+  }
+}

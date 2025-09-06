@@ -1,0 +1,201 @@
+.shop {
+  @include padding();
+  background-color: $primary-bg;
+  width: 100%;
+  color: $text-color;
+
+  .banners-con {
+    .title-banner {
+      @include center();
+      flex-direction: column;
+      height: 200px;
+      border-radius: 0 30px;
+      background-image: url("../images/about-us-banner.jpg");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      color: white;
+      h1 {
+        font-family: $font-i;
+        font-size: 50px;
+        font-weight: 500;
+      }
+      p {
+        font-size: 24px;
+        text-align: center;
+        width: 50%;
+      }
+    }
+
+    .text-banner {
+      position: relative;
+      color: white;
+      @include center();
+    }
+  }
+
+  .catalog {
+    width: 100%;
+    .filters {
+      width: 20%;
+      margin-right: 30px;
+      .filter-con {
+        background-color: #fff;
+        border: 1px solid rgba($color: $primary-color, $alpha: 0.3);
+        padding: 30px;
+        margin-bottom: 20px;
+        border-radius: 10px;
+        transition: all 0.3s ease;
+        // max-height: 240px;
+        overflow-y: hidden;
+        h3 {
+          font-size: 20px;
+          font-weight: 600;
+          color: $secondary-color;
+          padding-bottom: 10px;
+          border-bottom: 2px dashed $primary-color;
+        }
+        .content {
+          height: 140px;
+          ul {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            overflow-y: scroll;
+            height: 100%;
+            scrollbar-width: thin;
+            scrollbar-color: $primary-color;
+            li {
+              padding: 5px 0;
+              font-weight: 500;
+              font-size: 16px;
+              transition: all 0.3s ease;
+              cursor: pointer;
+            }
+            li:not(:last-child) {
+              border-bottom: 1px solid $my-gray;
+            }
+            li:hover {
+              color: $secondary-color;
+            }
+          }
+        }
+        .price-con {
+          @include center();
+          gap: 10px;
+          margin-top: 20px;
+          input:focus {
+            border: 1px solid rgba($color: $secondary-color, $alpha: 1);
+          }
+        }
+      }
+      .filter-con:hover {
+        border: 1px solid rgba($color: $primary-color, $alpha: 1);
+      }
+    }
+
+    .view-products {
+      width: calc(80% - 30px);
+      .toolbar {
+        @include between();
+        background-color: white;
+        width: 100%;
+        padding: 10px 20px;
+        margin-bottom: 30px;
+        font-weight: 500;
+        border-radius: 10px;
+        border: 1px solid rgba($color: $secondary-color, $alpha: 0.3);
+        transition: all 0.3s ease;
+        .right {
+          @include center();
+          .sort-con {
+            margin-right: 20px;
+            span {
+              margin-right: 10px;
+            }
+            select {
+              border: 1px solid $my-gray;
+              border-radius: 5px;
+              color: $text-color;
+              outline: none;
+              cursor: pointer;
+            }
+            select:focus {
+              border: 1px solid $primary-color;
+            }
+          }
+          .layout {
+            padding-left: 20px;
+            border-left: 1px solid $my-gray;
+            svg {
+              font-size: 24px;
+              cursor: pointer;
+            }
+            svg:first-child {
+              margin-right: 10px;
+            }
+            svg:active {
+              color: $primary-color;
+            }
+          }
+        }
+      }
+      .toolbar:hover {
+        border: 1px solid rgba($color: $secondary-color, $alpha: 1);
+      }
+
+      .current-filters {
+        display: flex;
+        align-items: center;
+        .badge {
+          @include center();
+          color: $text-color;
+          font-size: 16px;
+          font-weight: 600;
+          background-color: #fff;
+          margin-bottom: 15px;
+          margin-right: 10px;
+          svg {
+            font-size: 12px;
+            margin-left: 10px;
+            cursor: pointer;
+          }
+        }
+      }
+
+      .products {
+        @include between();
+        flex-wrap: wrap;
+        align-items: stretch;
+        justify-content: left;
+        gap: 20px;
+        .row {
+          width: 100%;
+        }
+        .card {
+          height: 100%;
+        }
+      }
+
+      .pagination {
+        gap: 7px;
+        .page-item .page-link{
+          @include center();
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+          border: 1px solid $my-gray;
+          color: $primary-color;
+        }
+        .page-item.active .page-link {
+          background-color: $primary-color;
+          border: 1px dashed white;
+          color: white;
+        }
+        button:focus {
+          box-shadow: none;
+        }
+      }
+    }
+  }
+}
